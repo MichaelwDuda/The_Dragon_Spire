@@ -1,35 +1,62 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(CharacterController))]
 public class FirstPersonController : MonoBehaviour
 {
+    [Header("Movement Settings")]
     public float moveSpeed = 8f;
     public float jumpHeight = 2f;
     public float gravity = -20f;
     public float mouseSensitivity = 2f;
     public float airControl = 0.5f;
 
+    [Header("References")]
     public Transform cameraTransform;
+
+    [Header("Input Actions")]
+    public InputActionReference moveAction;
+    public InputActionReference lookAction;
+    public InputActionReference jumpAction;
 
     private CharacterController controller;
     private Vector3 velocity;
     private float xRotation = 0f;
 
-    void Start()
+    private void Awake()
     {
         controller = GetComponent<CharacterController>();
-        Cursor.lockState = CursorLockMode.Locked;
     }
 
-    void Update()
+    private void OnEnable()
+    {
+        moveAction.action.Enable();
+        lookAction.action.Enable();
+        jumpAction.action.Enable();
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
+    private void OnDisable()
+    {
+        moveAction.action.Disable();
+        lookAction.action.Disable();
+        jumpAction.action.Disable();
+    }
+
+    private void Update()
     {
         HandleMouseLook();
         HandleMovement();
     }
 
-    void HandleMouseLook()
+    private void HandleMouseLook()
     {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * 100f * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * 100f * Time.deltaTime;
+        Vector2 lookInput = lookAction.action.ReadValue<Vector2>();
+
+        float mouseX = lookInput.x * mouseSensitivity;
+        float mouseY = lookInput.y * mouseSensitivity;
 
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
@@ -38,18 +65,17 @@ public class FirstPersonController : MonoBehaviour
         transform.Rotate(Vector3.up * mouseX);
     }
 
-    void HandleMovement()
+    private void HandleMovement()
     {
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
-
-        Vector3 move = transform.right * x + transform.forward * z;
+        Vector2 moveInput = moveAction.action.ReadValue<Vector2>();
+        Vector3 move = transform.right * moveInput.x + transform.forward * moveInput.y;
 
         if (controller.isGrounded)
         {
-            velocity.y = -2f;
+            if (velocity.y < 0f)
+                velocity.y = -2f;
 
-            if (Input.GetButtonDown("Jump"))
+            if (jumpAction.action.WasPressedThisFrame())
             {
                 velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             }

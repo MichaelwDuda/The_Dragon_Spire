@@ -17,13 +17,13 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody>();
+        // rb = GetComponent<Rigidbody>();
     }
 
     private void FixedUpdate()
     {
-        UpdateMovement();
-        UpdateRotation();
+        // UpdateMovement();
+        // UpdateRotation();
     }
 
     private void UpdateMovement()
@@ -53,7 +53,7 @@ public class Player : MonoBehaviour
         ));
     }
 
-    public void SetMoveVector(Vector2 moveVector) => _moveVector = moveVector;
-    public void ResetVelocity() => rb.linearVelocity = Vector3.zero;
-    public void ToggleSprintSpeed(bool toggle) => _isSprinting = toggle;
+    // public void SetMoveVector(Vector2 moveVector) => _moveVector = moveVector;
+    // public void ResetVelocity() => rb.linearVelocity = Vector3.zero;
+    // public void ToggleSprintSpeed(bool toggle) => _isSprinting = toggle;
 }
