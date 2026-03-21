@@ -80,6 +80,8 @@ public class FirstPersonController : MonoBehaviour
                 velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             }
 
+
+
             controller.Move(move * moveSpeed * Time.deltaTime);
         }
         else
