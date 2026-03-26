@@ -5,6 +5,8 @@ public class TowerAttack : MonoBehaviour
     public float detectionRange = 5f;
     public float attackCooldown = 1f;
     public int damage = 10;
+    public int maxTargets = 3;
+
 
     private float nextAttackTime = 0f;
     private Transform currentTarget;
