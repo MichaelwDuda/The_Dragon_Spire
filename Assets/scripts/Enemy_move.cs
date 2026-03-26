@@ -4,6 +4,8 @@ public class Enemy_move : MonoBehaviour
 {
     public Transform[] waypoints;
     public float speed = 3f;
+    public HomeTowerHealth homeTower;
+    public int damageToHome = 1;
 
     private int currentWaypointIndex = 0;
 
@@ -39,7 +41,10 @@ public class Enemy_move : MonoBehaviour
 
         void ReachHome()
         {
-            Debug.Log("Enemy reached home!");
+            if (homeTower != null)
+            {
+                homeTower.TakeDamage(damageToHome);
+            }
             Destroy(gameObject);
         }
     }
