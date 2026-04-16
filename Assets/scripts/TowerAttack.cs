@@ -7,7 +7,7 @@ public class TowerAttack : MonoBehaviour
     public int damage = 10;
     public int maxTargets = 3;
 
-
+    public GameObject projectile;
     private float nextAttackTime = 0f;
     private Transform currentTarget;
 
@@ -56,6 +56,15 @@ public class TowerAttack : MonoBehaviour
         if (enemyHealth != null)
         {
             enemyHealth.TakeDamage(damage);
+        }
+
+        if (projectile != null)
+        {
+            Instantiate(
+                projectile,
+                currentTarget.position,
+                Quaternion.identity
+            );
         }
     }
 }

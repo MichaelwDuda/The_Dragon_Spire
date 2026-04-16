@@ -7,6 +7,7 @@ public class AOETower : MonoBehaviour
     public float attackCooldown = 1f;
     public int damage = 10;
 
+    public GameObject AoeA;
     private float nextAttackTime = 0f;
 
     void Update()
@@ -20,6 +21,9 @@ public class AOETower : MonoBehaviour
 
     void AttackAllEnemies()
     {
+        if (AoeA != null)
+            Instantiate(AoeA, transform.position, Quaternion.identity);
+            
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("enemy");
 
         foreach (GameObject enemy in enemies)
