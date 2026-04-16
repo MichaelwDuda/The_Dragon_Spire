@@ -33,7 +33,6 @@ public class AOETower : MonoBehaviour
                 if (health != null)
                 {
                     health.TakeDamage(damage);
-                    Debug.DrawLine(transform.position, enemy.transform.position, Color.red, 0.2f);
                 }
             }
         }
