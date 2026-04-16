@@ -818,7 +818,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dc3381f68fbce241845700777d09bd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerAttack
-  detectionRange: 20
+  detectionRange: 10
   attackCooldown: 1
   damage: 10
   maxTargets: 3
@@ -912,7 +912,7 @@ Transform:
   m_GameObject: {fileID: 630961782}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 31.31, y: 1.64, z: -23.2}
+  m_LocalPosition: {x: 36.6, y: 1.64, z: 17.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1081,7 +1081,7 @@ Transform:
   m_GameObject: {fileID: 736837285}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 27.45, y: 1.912, z: -21.68}
+  m_LocalPosition: {x: 31.87, y: 1.912, z: -4.66}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1343,7 +1343,7 @@ Transform:
   m_GameObject: {fileID: 1162062018}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 35.9, y: 12.87, z: -86.4}
+  m_LocalPosition: {x: 1.17, y: 20.2, z: -61.91}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1519,7 +1519,7 @@ Transform:
   m_GameObject: {fileID: 1218244869}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.77, y: 1.64, z: -8.03}
+  m_LocalPosition: {x: 40.7, y: 1.64, z: 38}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2172,9 +2172,9 @@ MonoBehaviour:
   - {fileID: 1110350995}
   - {fileID: 642126564}
   - {fileID: 2114021413}
-  speed: 3
-  homeTower: {fileID: 0}
-  damageToHome: 1
+  speed: 10
+  homeTower: {fileID: 167257280}
+  damageToHome: 50
 --- !u!135 &1883639649
 SphereCollider:
   m_ObjectHideFlags: 0
