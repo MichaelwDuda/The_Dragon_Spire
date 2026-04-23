@@ -3,10 +3,6 @@ using UnityEngine;
 
 public class AOETower : TowerBase
 {
-   public float detectionRange = 5f;
-    public float attackCooldown = 1f;
-    public int damage = 10;
-
     public GameObject AoeA;
     private float nextAttackTime = 0f;
 
@@ -15,7 +11,7 @@ public class AOETower : TowerBase
         if (Time.time >= nextAttackTime)
         {
             AttackAllEnemies();
-            nextAttackTime = Time.time + attackCooldown;
+            nextAttackTime = Time.time + fireRate;
         }
     }
 
@@ -30,7 +26,7 @@ public class AOETower : TowerBase
         {
             float distance = Vector3.Distance(transform.position, enemy.transform.position);
 
-            if (distance <= detectionRange)
+            if (distance <= range)
             {
                 EnemyHealth health = enemy.GetComponent<EnemyHealth>();
 

@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class UpgradeUI : MonoBehaviour
 {
     public GameObject uiPanel;
-    private Tower targetTower;
+    private TowerBase targetTower;
 
     public Text damageText;
     public Text rangeText;
@@ -14,7 +14,7 @@ public class UpgradeUI : MonoBehaviour
     public Text rangeCostText;
     public Text fireRateCostText;
 
-    public void SetTarget(Tower tower)
+    public void SetTarget(TowerBase tower)
     {
         targetTower = tower;
         uiPanel.SetActive(true);

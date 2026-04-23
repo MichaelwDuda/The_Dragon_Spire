@@ -6,6 +6,6 @@ public class TowerClick : MonoBehaviour
 
     void OnMouseDown()
     {
-        towerUI.SetTarget(GetComponent<Tower>());
+        towerUI.SetTarget(GetComponent<TowerBase>());
     }
 }

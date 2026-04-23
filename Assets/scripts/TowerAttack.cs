@@ -2,9 +2,6 @@ using UnityEngine;
 
 public class TowerAttack : TowerBase
 {
-    public float detectionRange = 5f;
-    public float attackCooldown = 1f;
-    public int damage = 10;
     public int maxTargets = 3;
 
     public GameObject projectile;
@@ -19,10 +16,10 @@ public class TowerAttack : TowerBase
         {
             float distance = Vector3.Distance(transform.position, currentTarget.position);
 
-            if (distance <= detectionRange && Time.time >= nextAttackTime)
+            if (distance <= range && Time.time >= nextAttackTime)
             {
                 Attack();
-                nextAttackTime = Time.time + attackCooldown;
+                nextAttackTime = Time.time + fireRate;
             }
         }
     }
@@ -38,7 +35,7 @@ public class TowerAttack : TowerBase
         {
             float distance = Vector3.Distance(transform.position, enemy.transform.position);
 
-            if (distance < closestDistance && distance <= detectionRange)
+            if (distance < closestDistance && distance <= range)
             {
                 closestDistance = distance;
                 closestEnemy = enemy.transform;
