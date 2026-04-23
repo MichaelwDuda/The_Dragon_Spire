@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1065652742473321036}
   - component: {fileID: 9214524526333299860}
   - component: {fileID: 3430679735664648158}
+  - component: {fileID: -6796553883226465840}
   m_Layer: 0
   m_Name: EarthSpikeT
   m_TagString: Untagged
@@ -129,11 +130,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dc3381f68fbce241845700777d09bd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerAttack
-  detectionRange: 10
-  attackCooldown: 1
   damage: 10
+  range: 0
+  fireRate: 0
+  damageUpgradeCost: 0
+  rangeUpgradeCost: 0
+  fireRateUpgradeCost: 0
   maxTargets: 3
   projectile: {fileID: 9148593927560534307, guid: 181fcd74b6ca3dd44be4460ac7ad3598, type: 3}
+--- !u!114 &-6796553883226465840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184036577116175876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c09420398818690499024f654fed08bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerClick
+  towerUI: {fileID: 0}
 --- !u!1 &1842143394425927657
 GameObject:
   m_ObjectHideFlags: 0

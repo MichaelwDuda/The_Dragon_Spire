@@ -239,6 +239,7 @@ GameObject:
   - component: {fileID: 2430470910546630231}
   - component: {fileID: 1923096623622581395}
   - component: {fileID: 6352596198657998377}
+  - component: {fileID: 7108322986327244365}
   m_Layer: 0
   m_Name: Fireball
   m_TagString: Untagged
@@ -355,8 +356,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dc3381f68fbce241845700777d09bd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerAttack
-  detectionRange: 10
-  attackCooldown: 1
   damage: 10
+  range: 0
+  fireRate: 0
+  damageUpgradeCost: 0
+  rangeUpgradeCost: 0
+  fireRateUpgradeCost: 0
   maxTargets: 3
   projectile: {fileID: 2120039384934265843, guid: 87982a875730f0a45a8504fb4163e8a5, type: 3}
+--- !u!114 &7108322986327244365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7042291041447767813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c09420398818690499024f654fed08bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerClick
+  towerUI: {fileID: 0}

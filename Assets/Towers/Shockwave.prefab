@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4663172271183359939}
   - component: {fileID: 2997104948548082446}
   - component: {fileID: 3698815174175493779}
+  - component: {fileID: -2607534497350738561}
   m_Layer: 0
   m_Name: Shockwave
   m_TagString: Untagged
@@ -126,10 +127,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4651b14282b7c0843b2f25d9d32d97f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AOETower
-  detectionRange: 10
-  attackCooldown: 2
   damage: 10
+  range: 0
+  fireRate: 0
+  damageUpgradeCost: 0
+  rangeUpgradeCost: 0
+  fireRateUpgradeCost: 0
   AoeA: {fileID: 5591695296517293770, guid: 09dbcb05f5f081c4d8022a233ef5e0d8, type: 3}
+--- !u!114 &-2607534497350738561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5857372614244972397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c09420398818690499024f654fed08bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerClick
+  towerUI: {fileID: 0}
 --- !u!1 &6185151597882670404
 GameObject:
   m_ObjectHideFlags: 0
