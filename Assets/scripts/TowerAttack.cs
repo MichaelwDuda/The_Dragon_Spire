@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class TowerAttack : MonoBehaviour
+public class TowerAttack : TowerBase
 {
     public float detectionRange = 5f;
     public float attackCooldown = 1f;

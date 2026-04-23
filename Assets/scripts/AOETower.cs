@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AOETower : MonoBehaviour
+public class AOETower : TowerBase
 {
    public float detectionRange = 5f;
     public float attackCooldown = 1f;

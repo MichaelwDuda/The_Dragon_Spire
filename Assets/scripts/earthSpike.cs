@@ -18,7 +18,6 @@ public class earthSpike : MonoBehaviour
         transform.position += new Vector3(0, spawnYOffset, 0);
         // Store original X/Z scale so only Y changes
         baseScale = transform.localScale;
-
         // Start flat on the ground
         transform.localScale = new Vector3(baseScale.x, startHeight, baseScale.z);
     }
