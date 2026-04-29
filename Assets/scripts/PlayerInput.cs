@@ -226,6 +226,34 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Attack"",
+            ""id"": ""181a6b57-cf27-48a8-bfa6-87c0fbe20485"",
+            ""actions"": [
+                {
+                    ""name"": ""New action"",
+                    ""type"": ""Button"",
+                    ""id"": ""fc26ac6b-435e-4758-9b57-8f01abe77d4f"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""0e2d9a14-aca5-466c-ad63-6a6c5aecedb5"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""New action"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -239,6 +267,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         // Jump
         m_Jump = asset.FindActionMap("Jump", throwIfNotFound: true);
         m_Jump_Newaction = m_Jump.FindAction("New action", throwIfNotFound: true);
+        // Attack
+        m_Attack = asset.FindActionMap("Attack", throwIfNotFound: true);
+        m_Attack_Newaction = m_Attack.FindAction("New action", throwIfNotFound: true);
     }
 
     ~@PlayerInput()
@@ -246,6 +277,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         UnityEngine.Debug.Assert(!m_Move.enabled, "This will cause a leak and performance issues, PlayerInput.Move.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_Look.enabled, "This will cause a leak and performance issues, PlayerInput.Look.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_Jump.enabled, "This will cause a leak and performance issues, PlayerInput.Jump.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_Attack.enabled, "This will cause a leak and performance issues, PlayerInput.Attack.Disable() has not been called.");
     }
 
     /// <summary>
@@ -605,6 +637,102 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     /// Provides a new <see cref="JumpActions" /> instance referencing this action map.
     /// </summary>
     public JumpActions @Jump => new JumpActions(this);
+
+    // Attack
+    private readonly InputActionMap m_Attack;
+    private List<IAttackActions> m_AttackActionsCallbackInterfaces = new List<IAttackActions>();
+    private readonly InputAction m_Attack_Newaction;
+    /// <summary>
+    /// Provides access to input actions defined in input action map "Attack".
+    /// </summary>
+    public struct AttackActions
+    {
+        private @PlayerInput m_Wrapper;
+
+        /// <summary>
+        /// Construct a new instance of the input action map wrapper class.
+        /// </summary>
+        public AttackActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
+        /// <summary>
+        /// Provides access to the underlying input action "Attack/Newaction".
+        /// </summary>
+        public InputAction @Newaction => m_Wrapper.m_Attack_Newaction;
+        /// <summary>
+        /// Provides access to the underlying input action map instance.
+        /// </summary>
+        public InputActionMap Get() { return m_Wrapper.m_Attack; }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
+        public void Enable() { Get().Enable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
+        public void Disable() { Get().Disable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
+        public bool enabled => Get().enabled;
+        /// <summary>
+        /// Implicitly converts an <see ref="AttackActions" /> to an <see ref="InputActionMap" /> instance.
+        /// </summary>
+        public static implicit operator InputActionMap(AttackActions set) { return set.Get(); }
+        /// <summary>
+        /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <param name="instance">Callback instance.</param>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
+        /// </remarks>
+        /// <seealso cref="AttackActions" />
+        public void AddCallbacks(IAttackActions instance)
+        {
+            if (instance == null || m_Wrapper.m_AttackActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_AttackActionsCallbackInterfaces.Add(instance);
+            @Newaction.started += instance.OnNewaction;
+            @Newaction.performed += instance.OnNewaction;
+            @Newaction.canceled += instance.OnNewaction;
+        }
+
+        /// <summary>
+        /// Removes <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <remarks>
+        /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
+        /// </remarks>
+        /// <seealso cref="AttackActions" />
+        private void UnregisterCallbacks(IAttackActions instance)
+        {
+            @Newaction.started -= instance.OnNewaction;
+            @Newaction.performed -= instance.OnNewaction;
+            @Newaction.canceled -= instance.OnNewaction;
+        }
+
+        /// <summary>
+        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="AttackActions.UnregisterCallbacks(IAttackActions)" />.
+        /// </summary>
+        /// <seealso cref="AttackActions.UnregisterCallbacks(IAttackActions)" />
+        public void RemoveCallbacks(IAttackActions instance)
+        {
+            if (m_Wrapper.m_AttackActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        /// <summary>
+        /// Replaces all existing callback instances and previously registered input action callbacks associated with them with callbacks provided via <param cref="instance" />.
+        /// </summary>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
+        /// </remarks>
+        /// <seealso cref="AttackActions.AddCallbacks(IAttackActions)" />
+        /// <seealso cref="AttackActions.RemoveCallbacks(IAttackActions)" />
+        /// <seealso cref="AttackActions.UnregisterCallbacks(IAttackActions)" />
+        public void SetCallbacks(IAttackActions instance)
+        {
+            foreach (var item in m_Wrapper.m_AttackActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_AttackActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    /// <summary>
+    /// Provides a new <see cref="AttackActions" /> instance referencing this action map.
+    /// </summary>
+    public AttackActions @Attack => new AttackActions(this);
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Move" which allows adding and removing callbacks.
     /// </summary>
@@ -641,6 +769,21 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     /// <seealso cref="JumpActions.AddCallbacks(IJumpActions)" />
     /// <seealso cref="JumpActions.RemoveCallbacks(IJumpActions)" />
     public interface IJumpActions
+    {
+        /// <summary>
+        /// Method invoked when associated input action "New action" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnNewaction(InputAction.CallbackContext context);
+    }
+    /// <summary>
+    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Attack" which allows adding and removing callbacks.
+    /// </summary>
+    /// <seealso cref="AttackActions.AddCallbacks(IAttackActions)" />
+    /// <seealso cref="AttackActions.RemoveCallbacks(IAttackActions)" />
+    public interface IAttackActions
     {
         /// <summary>
         /// Method invoked when associated input action "New action" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
