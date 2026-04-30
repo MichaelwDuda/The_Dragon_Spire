@@ -127,6 +127,7 @@ GameObject:
   - component: {fileID: 5720852922481305310}
   - component: {fileID: 3905452017744984871}
   - component: {fileID: 7413303247930172434}
+  - component: {fileID: 4150777793190910334}
   m_Layer: 0
   m_Name: Tower1 (1)
   m_TagString: Untagged
@@ -243,11 +244,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dc3381f68fbce241845700777d09bd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerAttack
-  detectionRange: 10
-  attackCooldown: 1
   damage: 10
+  range: 0
+  fireRate: 0
+  damageUpgradeCost: 0
+  rangeUpgradeCost: 0
+  fireRateUpgradeCost: 0
   maxTargets: 3
   projectile: {fileID: 2120039384934265843, guid: 87982a875730f0a45a8504fb4163e8a5, type: 3}
+--- !u!114 &4150777793190910334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4776590205858657048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40d16529214adb0499ce5793c402af6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerHighlight
 --- !u!1 &8119067048682781127
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,6 +6,7 @@ public class TowerClick : MonoBehaviour
 
     void OnMouseDown()
     {
+        Debug.Log("Tower clicked!");
         towerUI.SetTarget(GetComponent<TowerBase>());
     }
 }

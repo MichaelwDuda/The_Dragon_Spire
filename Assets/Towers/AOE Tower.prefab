@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3552730642590222437}
   - component: {fileID: 1979014901457120010}
   - component: {fileID: 1275019162608126495}
+  - component: {fileID: 1805746135993598954}
   m_Layer: 0
   m_Name: AOE Tower
   m_TagString: Untagged
@@ -125,7 +126,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4651b14282b7c0843b2f25d9d32d97f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AOETower
-  detectionRange: 10
-  attackCooldown: 2
   damage: 10
+  range: 0
+  fireRate: 0
+  damageUpgradeCost: 0
+  rangeUpgradeCost: 0
+  fireRateUpgradeCost: 0
   AoeA: {fileID: 5591695296517293770, guid: 09dbcb05f5f081c4d8022a233ef5e0d8, type: 3}
+--- !u!114 &1805746135993598954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8329554365268559101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40d16529214adb0499ce5793c402af6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerHighlight

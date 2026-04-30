@@ -22,6 +22,7 @@ public class FirstPersonController : MonoBehaviour
     private CharacterController controller;
     private Vector3 velocity;
     private float xRotation = 0f;
+    public bool allowMouseLock = true;
 
     private void Awake()
     {
@@ -34,8 +35,10 @@ public class FirstPersonController : MonoBehaviour
         lookAction.action.Enable();
         jumpAction.action.Enable();
 
+        
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        
     }
 
     private void OnDisable()
@@ -91,5 +94,18 @@ public class FirstPersonController : MonoBehaviour
 
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
+    }
+    public void SetCursorLocked(bool locked)
+    {
+        if (locked)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
     }
 }

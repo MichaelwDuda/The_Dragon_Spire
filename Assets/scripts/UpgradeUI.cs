@@ -13,11 +13,13 @@ public class UpgradeUI : MonoBehaviour
     public Text damageCostText;
     public Text rangeCostText;
     public Text fireRateCostText;
-
+    
     public void SetTarget(TowerBase tower)
     {
         targetTower = tower;
         uiPanel.SetActive(true);
+
+        FindObjectOfType<FirstPersonController>().SetCursorLocked(false);
 
         UpdateUI();
     }
@@ -25,6 +27,8 @@ public class UpgradeUI : MonoBehaviour
     public void Hide()
     {
         uiPanel.SetActive(false);
+        // Lock cursor again
+        FindObjectOfType<FirstPersonController>().SetCursorLocked(true);
     }
 
     public void UpgradeDamage()
@@ -55,4 +59,6 @@ public class UpgradeUI : MonoBehaviour
         rangeCostText.text = "$" + targetTower.rangeUpgradeCost;
         fireRateCostText.text = "$" + targetTower.fireRateUpgradeCost;
     }
+
+    
 }

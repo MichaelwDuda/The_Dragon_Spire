@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1181081163772158871}
   - component: {fileID: 4661684098897651131}
   - component: {fileID: 8209467266579865738}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 2023360228612353093}
   - component: {fileID: 2147524621990045507}
   - component: {fileID: 4606974625555457343}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -239,8 +239,8 @@ GameObject:
   - component: {fileID: 2430470910546630231}
   - component: {fileID: 1923096623622581395}
   - component: {fileID: 6352596198657998377}
-  - component: {fileID: 7108322986327244365}
-  m_Layer: 0
+  - component: {fileID: -4523099040999042867}
+  m_Layer: 3
   m_Name: Fireball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -364,7 +364,7 @@ MonoBehaviour:
   fireRateUpgradeCost: 0
   maxTargets: 3
   projectile: {fileID: 2120039384934265843, guid: 87982a875730f0a45a8504fb4163e8a5, type: 3}
---- !u!114 &7108322986327244365
+--- !u!114 &-4523099040999042867
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -373,7 +373,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 7042291041447767813}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c09420398818690499024f654fed08bc, type: 3}
+  m_Script: {fileID: 11500000, guid: 40d16529214adb0499ce5793c402af6c, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TowerClick
-  towerUI: {fileID: 0}
+  m_EditorClassIdentifier: Assembly-CSharp::TowerHighlight
