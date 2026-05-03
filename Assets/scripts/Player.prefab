@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 1565051106455371362}
   - component: {fileID: 1314111883754814421}
   - component: {fileID: 4036343275285504984}
+  - component: {fileID: 4631109184299536041}
+  - component: {fileID: 1572917408538681766}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -164,6 +166,7 @@ MonoBehaviour:
   moveAction: {fileID: 3460539901379853149, guid: 390803ce8876bad41891daaf85555b4d, type: 3}
   lookAction: {fileID: 6492395231161196081, guid: 390803ce8876bad41891daaf85555b4d, type: 3}
   jumpAction: {fileID: 178637750659579149, guid: 390803ce8876bad41891daaf85555b4d, type: 3}
+  allowMouseLock: 1
 --- !u!114 &4036343275285504984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,15 +180,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FireBreath
   fireBreath: {fileID: 0}
-  attack:
-    m_Name: Attack
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 167ff4a1-278b-4be4-8873-9f6143eafa1c
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
+  attackAction: {fileID: 0}
+--- !u!114 &4631109184299536041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1456167529982092380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbce47b6dbe2acc478df4c11f1757c1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponManager
+  selectionIndicator: {fileID: 0}
+--- !u!114 &1572917408538681766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1456167529982092380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f1c525188df883459ea69f798d61c8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponSwitcher
+  weapons:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &7949509213017448068
 GameObject:
   m_ObjectHideFlags: 0

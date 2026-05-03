@@ -18,6 +18,8 @@ public class FireBreathController : MonoBehaviour
 
     private void Update()
     {
+        if (!enabled) return;
+
         if (attackAction.action.IsPressed())
         {
             if (!fireBreath.isPlaying)
