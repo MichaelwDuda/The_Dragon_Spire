@@ -48,6 +48,10 @@ public class UpgradeUI : MonoBehaviour
         targetTower.UpgradeFireRate();
         UpdateUI();
     }
+    public void OnExitButtonPressed()
+    {
+        Hide();
+    }
 
     void UpdateUI()
     {

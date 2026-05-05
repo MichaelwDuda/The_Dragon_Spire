@@ -8,6 +8,7 @@ public class TowerDetector : MonoBehaviour
 
     private TowerHighlight currentTower;
     public UpgradeUI upgradeUI;
+    public int Epress = 0;
 
     void Update()
     {
@@ -52,8 +53,10 @@ public class TowerDetector : MonoBehaviour
     {
         if (currentTower != null && Keyboard.current.eKey.wasPressedThisFrame)
         {
+            Epress += 1;
             TowerBase baseTower = currentTower.GetComponent<TowerBase>();
             upgradeUI.SetTarget(baseTower);
         }
+
     }
 }
