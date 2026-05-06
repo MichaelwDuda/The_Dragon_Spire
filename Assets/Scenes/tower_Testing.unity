@@ -1634,6 +1634,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: EarthSpikeT
       objectReference: {fileID: 0}
+    - target: {fileID: 3430679735664648158, guid: 4c9249b6d814f5545a0af2a7aee9dcbd, type: 3}
+      propertyPath: range
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3430679735664648158, guid: 4c9249b6d814f5545a0af2a7aee9dcbd, type: 3}
+      propertyPath: fireRate
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3430679735664648158, guid: 4c9249b6d814f5545a0af2a7aee9dcbd, type: 3}
+      propertyPath: rangeUpgradeCost
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3430679735664648158, guid: 4c9249b6d814f5545a0af2a7aee9dcbd, type: 3}
+      propertyPath: damageUpgradeCost
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3430679735664648158, guid: 4c9249b6d814f5545a0af2a7aee9dcbd, type: 3}
+      propertyPath: fireRateUpgradeCost
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3978006471733889859, guid: 4c9249b6d814f5545a0af2a7aee9dcbd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -21.166147
@@ -1861,14 +1881,6 @@ PrefabInstance:
     - target: {fileID: 1593988954143430437, guid: bb02afa2d759d904ebceeb6d17dc4fa9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6980428463374493117, guid: bb02afa2d759d904ebceeb6d17dc4fa9, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6980428463374493117, guid: bb02afa2d759d904ebceeb6d17dc4fa9, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
