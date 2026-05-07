@@ -128,8 +128,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AOETower
   damage: 10
-  range: 0
-  fireRate: 0
+  range: 10
+  fireRate: 2
   damageUpgradeCost: 0
   rangeUpgradeCost: 0
   fireRateUpgradeCost: 0
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c09420398818690499024f654fed08bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerClick
-  towerUI: {fileID: 9018674934964570813, guid: bb02afa2d759d904ebceeb6d17dc4fa9, type: 3}
+  towerUI: {fileID: 0}
 --- !u!1 &6185151597882670404
 GameObject:
   m_ObjectHideFlags: 0

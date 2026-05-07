@@ -110,12 +110,12 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
-  m_Height: 2
+  m_Radius: 2.3992844
+  m_Height: 4.7985687
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3430679735664648158
@@ -131,11 +131,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerAttack
   damage: 10
-  range: 0
-  fireRate: 0
-  damageUpgradeCost: 0
-  rangeUpgradeCost: 0
-  fireRateUpgradeCost: 0
+  range: 10
+  fireRate: 1
+  damageUpgradeCost: 10
+  rangeUpgradeCost: 10
+  fireRateUpgradeCost: 10
   maxTargets: 3
   projectile: {fileID: 9148593927560534307, guid: 181fcd74b6ca3dd44be4460ac7ad3598, type: 3}
 --- !u!114 &-2308324074448965691
@@ -161,7 +161,6 @@ GameObject:
   - component: {fileID: 6505623476269851632}
   - component: {fileID: 4922784807445147759}
   - component: {fileID: 6328603532972326987}
-  - component: {fileID: 5688048793319552452}
   m_Layer: 3
   m_Name: Cylinder
   m_TagString: Untagged
@@ -241,29 +240,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &5688048793319552452
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1842143394425927657}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!1 &9078702000593987673
 GameObject:
   m_ObjectHideFlags: 0
