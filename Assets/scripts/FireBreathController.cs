@@ -5,6 +5,7 @@ public class FireBreathController : MonoBehaviour
 {
     public ParticleSystem fireBreath;
     public InputActionReference attackAction;
+    public GameObject hitBox;
 
     private void OnEnable()
     {
@@ -23,12 +24,20 @@ public class FireBreathController : MonoBehaviour
         if (attackAction.action.IsPressed())
         {
             if (!fireBreath.isPlaying)
+            {
                 fireBreath.Play();
+            }
+
+            hitBox.SetActive(true);
         }
         else
         {
             if (fireBreath.isPlaying)
+            {
                 fireBreath.Stop();
+            }
+
+            hitBox.SetActive(false);
         }
     }
 }
