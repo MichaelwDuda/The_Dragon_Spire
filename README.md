@@ -42,11 +42,11 @@ Towers are placed objects that can be tested in a dedicated scene. They use pref
 
 ## Project Structure
 
-* `Player/` - Player movement and combat scripts
-* `Enemies/` - Enemy AI and health logic
-* `Weapons/` - Gun and fire breath systems
-* `Prefabs/` - Reusable game objects
+* `Player/` - Player prefabs for the Bullet and Fire Breath.
+* `Enemy/` - Enemy prefabs and waypoints.
+* `Scripts/` - All different scripts for weapons, enemy, and towers.
 * `Scenes/` - Test and main gameplay scenes
+* `Towers/` - Tower prefabs for all the different towers and their structures.
 
 ## Setup Notes
 
