@@ -1,5 +1,4 @@
 using System.Collections;
-using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -13,33 +12,46 @@ public class GunController : MonoBehaviour
     public InputActionReference attackAction;
 
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void OnEnable()
     {
-
+        attackAction.action.Enable();
     }
+
+    private void OnDisable()
+    {
+        attackAction.action.Disable();
+    }
+
 
     // Update is called once per frame
     void Update()
     {
+        if (!enabled) return;
+
         if (attackAction.action.WasPressedThisFrame())
         {
+            Debug.Log("Fire");
             Fire();
         }
     }
 
     private void Fire()
     {
-        GameObject bullet = Instantiate(bulletPrefab);
-        Physics.IgnoreCollision(bullet.GetComponent<Collider>(), bulletSpawn.parent.GetComponent<Collider>());
+        GameObject bullet = Instantiate(
+            bulletPrefab,
+            bulletSpawn.position,
+            bulletSpawn.rotation
+        );
 
-        bullet.transform.position = bulletSpawn.position;
-        Vector3 rotation = bullet.transform.rotation.eulerAngles;
-        bullet.transform.rotation = Quaternion.Euler(rotation.x, transform.eulerAngles.y, rotation.z);
+        Rigidbody rb = bullet.GetComponent<Rigidbody>();
 
-        bullet.GetComponent<Rigidbody>().AddForce(bulletSpawn.forward * bulletSpeed, ForceMode.Impulse);
+        if (rb != null)
+        {
+            rb.linearVelocity = bulletSpawn.forward * bulletSpeed;
+            Debug.Log(bulletSpawn.forward);
+        }
 
-        StartCoroutine(DestroyBullet(bullet, lifeTime));
+        Destroy(bullet, lifeTime);
     }
 
     private IEnumerator DestroyBullet(GameObject bullet, float delay)
