@@ -30,7 +30,6 @@ public class GunController : MonoBehaviour
 
         if (attackAction.action.WasPressedThisFrame())
         {
-            Debug.Log("Fire");
             Fire();
         }
     }
@@ -48,7 +47,7 @@ public class GunController : MonoBehaviour
         if (rb != null)
         {
             rb.linearVelocity = bulletSpawn.forward * bulletSpeed;
-            Debug.Log(bulletSpawn.forward);
+            //Debug.Log(bulletSpawn.forward);
         }
 
         Destroy(bullet, lifeTime);

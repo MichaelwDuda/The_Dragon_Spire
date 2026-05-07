@@ -1,11 +1,10 @@
-using System;
 using UnityEngine;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public class BulletBehavior : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        print("hit " + other.name);
+        Debug.Log("hit " + other.name);
         Destroy(gameObject);
     }
 }
