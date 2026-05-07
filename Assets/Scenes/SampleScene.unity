@@ -983,6 +983,62 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &712849724
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 712849726}
+  - component: {fileID: 712849725}
+  m_Layer: 0
+  m_Name: Enemy Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &712849725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712849724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 051dabca55e84c44c90645099522fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
+  waves:
+  - enemyPrefab: {fileID: 9063956855038895494, guid: d155481b5c6bfa0449cbc6365656d6e0, type: 3}
+    enemyCount: 3
+    spawnDelay: 1
+    timeBeforeNextWave: 3
+  spawnPoint: {fileID: 979925343}
+  waypoints:
+  - {fileID: 979925343}
+  - {fileID: 177371256}
+  - {fileID: 1065192391}
+  homeTower: {fileID: 1362151994}
+  startOnPlay: 1
+--- !u!4 &712849726
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712849724}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 44.17, y: 1.23231, z: -28.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &716493697
 GameObject:
   m_ObjectHideFlags: 0
@@ -1240,7 +1296,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18deea11d158f684e9c779b0cbb23963, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
-  health: 30
+  maxHealth: 30
+  rewardValue: 1
+  destroyDelayAfterDeath: 1.5
+  onDied:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1455,6 +1516,7 @@ GameObject:
   - component: {fileID: 1362151992}
   - component: {fileID: 1362151991}
   - component: {fileID: 1362151990}
+  - component: {fileID: 1362151994}
   m_Layer: 0
   m_Name: home
   m_TagString: Untagged
@@ -1557,6 +1619,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1362151994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1362151989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8bb0e03732c7814f9861ffaeb8e8c86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HomeTowerHealth
+  maxHealth: 100
 --- !u!1 &1385611480
 GameObject:
   m_ObjectHideFlags: 0
@@ -2475,3 +2550,4 @@ SceneRoots:
   - {fileID: 604939212889920670}
   - {fileID: 4591825680861230053}
   - {fileID: 1697110078}
+  - {fileID: 712849726}
