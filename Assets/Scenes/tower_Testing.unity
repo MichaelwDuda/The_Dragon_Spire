@@ -1634,26 +1634,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: EarthSpikeT
       objectReference: {fileID: 0}
-    - target: {fileID: 3430679735664648158, guid: 4c9249b6d814f5545a0af2a7aee9dcbd, type: 3}
-      propertyPath: range
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3430679735664648158, guid: 4c9249b6d814f5545a0af2a7aee9dcbd, type: 3}
-      propertyPath: fireRate
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3430679735664648158, guid: 4c9249b6d814f5545a0af2a7aee9dcbd, type: 3}
-      propertyPath: rangeUpgradeCost
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3430679735664648158, guid: 4c9249b6d814f5545a0af2a7aee9dcbd, type: 3}
-      propertyPath: damageUpgradeCost
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3430679735664648158, guid: 4c9249b6d814f5545a0af2a7aee9dcbd, type: 3}
-      propertyPath: fireRateUpgradeCost
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 3978006471733889859, guid: 4c9249b6d814f5545a0af2a7aee9dcbd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -21.166147
@@ -1694,28 +1674,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9214524526333299860, guid: 4c9249b6d814f5545a0af2a7aee9dcbd, type: 3}
-      propertyPath: m_Height
-      value: 4.7985687
-      objectReference: {fileID: 0}
-    - target: {fileID: 9214524526333299860, guid: 4c9249b6d814f5545a0af2a7aee9dcbd, type: 3}
-      propertyPath: m_Radius
-      value: 2.3992844
-      objectReference: {fileID: 0}
-    - target: {fileID: 9214524526333299860, guid: 4c9249b6d814f5545a0af2a7aee9dcbd, type: 3}
-      propertyPath: m_Center.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9214524526333299860, guid: 4c9249b6d814f5545a0af2a7aee9dcbd, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9214524526333299860, guid: 4c9249b6d814f5545a0af2a7aee9dcbd, type: 3}
-      propertyPath: m_ProvidesContacts
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5688048793319552452, guid: 4c9249b6d814f5545a0af2a7aee9dcbd, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1736,14 +1695,6 @@ PrefabInstance:
     - target: {fileID: 184036577116175876, guid: 4c9249b6d814f5545a0af2a7aee9dcbd, type: 3}
       propertyPath: m_Name
       value: EarthSpike
-      objectReference: {fileID: 0}
-    - target: {fileID: 3430679735664648158, guid: 4c9249b6d814f5545a0af2a7aee9dcbd, type: 3}
-      propertyPath: range
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3430679735664648158, guid: 4c9249b6d814f5545a0af2a7aee9dcbd, type: 3}
-      propertyPath: fireRate
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3978006471733889859, guid: 4c9249b6d814f5545a0af2a7aee9dcbd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1899,14 +1850,6 @@ PrefabInstance:
       propertyPath: towerUI
       value: 
       objectReference: {fileID: 944621651}
-    - target: {fileID: 3698815174175493779, guid: 72efbfa4e0a73784ba01adcd30f8842a, type: 3}
-      propertyPath: range
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3698815174175493779, guid: 72efbfa4e0a73784ba01adcd30f8842a, type: 3}
-      propertyPath: fireRate
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4585816121621020876, guid: 72efbfa4e0a73784ba01adcd30f8842a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 31.99
