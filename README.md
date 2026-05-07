@@ -1,6 +1,5 @@
 # The Dragon Spire
 
-<<<<<<< HEAD
 The Dragon Spire is an in-development Unity tower-defense / first-person action prototype. The current game loop has the player defending a home tower while enemies spawn in waves, travel along waypoint paths, and take damage from both player weapons and placed towers.
 
 This README is written for contributors who need to open the project, understand the main systems, and make changes without having to reverse-engineer the scene setup first.
@@ -256,4 +255,3 @@ Towers are placed objects that can be tested in a dedicated scene. They use pref
 * Tower upgrade system
 * Better VFX and hit feedback
 * Object pooling for projectiles
->>>>>>> 535c7aab85a83da9b2f7dde91c658afba6ea3ce3
